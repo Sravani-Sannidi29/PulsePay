@@ -317,7 +317,8 @@ function StepAmount({
         />
       </div>
 
-      <div className="flex gap-3">
+      {/* FIX: fixed action row well above the mobile keyboard/chrome zone, no scroll required */}
+      <div className="fixed bottom-[130px] left-0 right-0 z-20 mx-auto max-w-md bg-[#F8FAFC] px-4 pt-2 pb-2 flex gap-3 border-t border-[#E2E8F0]">
         <Button variant="secondary" size="lg" onClick={onBack} className="gap-2">
           <ChevronLeft className="w-4 h-4" />
           Back
@@ -478,31 +479,17 @@ function StepOTP({
   const cleanOtp = otp.replace(/\s/g, "");
   const isReady = cleanOtp.length === 6;
 
+  // FIX: compact the header above the OTP row — on iPhone SE the decorative icon
+  // and generous margins pushed the input past the mobile-keyboard-safe line
   return (
-    <div className="max-w-md mx-auto text-center">
-      <div className="w-16 h-16 rounded-2xl bg-[#EEF2FF] flex items-center justify-center mx-auto mb-6">
-        <svg
-          className="w-8 h-8 text-[#4F46E5]"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-          />
-        </svg>
-      </div>
-
-      <h2 className="text-xl font-bold text-[#0F172A] mb-2">
+    <div className="max-w-md mx-auto text-center pt-0">
+      <h2 className="text-base font-bold text-[#0F172A] mb-0.5">
         Verify your identity
       </h2>
-      <p className="text-[#64748B] text-sm mb-2">
+      <p className="text-[#64748B] text-xs mb-0.5">
         We sent a 6-digit code to
       </p>
-      <p className="font-semibold text-[#0F172A] mb-8">
+      <p className="font-semibold text-[#0F172A] text-xs mb-2">
         +1 (***) ***-0123
       </p>
 

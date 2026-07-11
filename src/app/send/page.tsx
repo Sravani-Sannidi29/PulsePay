@@ -317,7 +317,8 @@ function StepAmount({
         />
       </div>
 
-      <div className="flex gap-3">
+      {/* FIX: fixed action row well above the mobile keyboard/chrome zone, no scroll required */}
+      <div className="fixed bottom-[130px] left-0 right-0 z-20 mx-auto max-w-md bg-[#F8FAFC] px-4 pt-2 pb-2 flex gap-3 border-t border-[#E2E8F0]">
         <Button variant="secondary" size="lg" onClick={onBack} className="gap-2">
           <ChevronLeft className="w-4 h-4" />
           Back

@@ -13,6 +13,7 @@ export function RecipientCard({ recipient, selected, onClick }: RecipientCardPro
   return (
     <button
       type="button"
+      data-testid="recipient-card"
       onClick={onClick}
       className={cn(
         "w-full text-left p-4 rounded-2xl border-2 transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F46E5]/30",

@@ -79,18 +79,21 @@ export default function LoginPage() {
       </div>
 
       {/* Right Panel — Login Form */}
-      <div className="flex-1 flex items-center justify-center bg-white p-6 sm:p-8">
+      {/* FIX: anchor to top on small viewports (not vertically centered) and tighten
+          header spacing, so email/password sit above the mobile-keyboard-safe line
+          instead of being pushed down by centering + decorative whitespace */}
+      <div className="flex-1 flex items-start lg:items-center justify-center bg-white p-6 pt-3 sm:p-8">
         <div className="w-full max-w-sm">
           {/* Mobile logo */}
-          <div className="lg:hidden flex items-center gap-2.5 mb-8 justify-center">
+          <div className="lg:hidden flex items-center gap-2.5 mb-2 justify-center">
             <div className="w-9 h-9 bg-[#4F46E5] rounded-xl flex items-center justify-center">
               <Activity className="w-4 h-4 text-white" strokeWidth={2.5} />
             </div>
             <span className="text-xl font-bold text-[#0F172A]">PulsePay</span>
           </div>
 
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-[#0F172A] mb-1">Welcome back</h2>
+          <div className="mb-2">
+            <h2 className="text-xl font-bold text-[#0F172A] mb-1">Welcome back</h2>
             <p className="text-[#64748B]">Sign in to your account to continue</p>
           </div>
 

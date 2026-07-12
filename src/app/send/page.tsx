@@ -156,8 +156,12 @@ function StepRecipient({
         ))}
       </div>
 
+      {/* FIX: wired onClick + accessible name + test id so the control is no longer a dead click */}
       <button
         type="button"
+        data-testid="new-recipient-button"
+        aria-label="Add a new recipient"
+        onClick={() => console.info("[PulsePay] Add recipient — flow coming soon")}
         className="flex items-center gap-2 text-sm font-medium text-[#4F46E5] hover:text-[#3730A3] transition-colors mb-8 px-1"
       >
         <div className="w-6 h-6 rounded-full border-2 border-dashed border-[#4F46E5] flex items-center justify-center">

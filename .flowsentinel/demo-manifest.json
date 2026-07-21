@@ -1,0 +1,12 @@
+{
+  "demo": "FlowSentinel Experience Gate",
+  "branch": "feature/mobile-transfer-redesign-20260721-2216",
+  "prepared_at": "2026-07-21T22:16:31",
+  "regressions": [
+    "login_keyboard_occlusion",
+    "amount_cta_below_fold",
+    "otp_keyboard_occlusion",
+    "recipient_dead_click"
+  ],
+  "note": "Mobile transfer redesign \u2014 desktop OK, mobile regressions for the gate to catch."
+}

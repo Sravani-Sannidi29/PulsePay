@@ -156,20 +156,8 @@ function StepRecipient({
         ))}
       </div>
 
-      {/* FIX: wired onClick + accessible name + test id, and the control now
-          gives real visible feedback (a toast) instead of silently doing nothing. */}
       <button
         type="button"
-        data-testid="new-recipient-button"
-        aria-label="Add a new recipient"
-        onClick={() => {
-          const t = document.createElement("div");
-          t.setAttribute("role", "status");
-          t.textContent = "Add a new recipient — coming soon";
-          t.style.cssText = "position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0F172A;color:#fff;padding:10px 18px;border-radius:10px;font-size:14px;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,0.25)";
-          document.body.appendChild(t);
-          setTimeout(() => t.remove(), 2600);
-        }}
         className="flex items-center gap-2 text-sm font-medium text-[#4F46E5] hover:text-[#3730A3] transition-colors mb-8 px-1"
       >
         <div className="w-6 h-6 rounded-full border-2 border-dashed border-[#4F46E5] flex items-center justify-center">
